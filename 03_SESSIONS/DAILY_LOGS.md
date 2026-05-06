@@ -24,9 +24,27 @@
 - **Prompt 3**: *The user noted the font was still plain and requested deployment to GitHub and Netlify, along with Obsidian documentation.*
 - **Actions Taken**:
   - Replaced Tailwind's non-working `font-script` class with an explicit `.script-font` class mapping to `var(--font-pinyon), cursive` in `globals.css`.
+  - Fixed Git submodule issue by merging `website` into the main repository and pushed to GitHub.
+  - Resolved build failure by replacing `next/font/google` with manual Google Fonts link tags to bypass network restrictions in the build environment.
+  - Successfully built the project locally and initiated manual deployment via Netlify CLI.
   - Added detailed tracking of prompts and actions in `DAILY_LOGS.md`.
-  - Committed code to GitHub.
-  - Deployed to Netlify.
+
+## 2026-05-06 (Session 3: Visual Heritage & Branding)
+- **Prompt 4**: *The user requested incorporating Trinacria, Testa di Mori, and Ficodindia symbols as low-opacity background patterns and updating the color palette to match physical restaurant assets (plates, seats, fork holders).*
+- **Actions Taken**:
+  - **Color Palette Update**: Refined design tokens in `globals.css` to match physical assets:
+    - `cobalt`: Deep Majolica Blue from plates.
+    - `espresso`: Warm dark wood from restaurant seating.
+    - `terracotta`: Vibrant ceramic orange from fork holders.
+    - `cream`: Clean warm white from ceramic tableware.
+  - **Heritage Patterns**:
+    - Created a new `bg-heritage` CSS class with an inline SVG pattern featuring stylized Trinacria and Testa di Moro motifs.
+    - Applied the `bg-heritage` pattern as a low-opacity watermark across `Hero.tsx`, `OurStory.tsx`, and `DigitalMenu.tsx`.
+    - Integrated the `bg-ficodindia` and `bg-majolica` patterns more deeply into the layout for a layered, authentic Sicilian aesthetic.
+  - **SEO & Content**:
+    - Verified the restaurant founding date as **2018** across all languages.
+    - Optimized SEO metadata in `layout.tsx` with updated keywords and JSON-LD schema.
+  - **Deployment**: Successfully pushed changes to GitHub. (Note: Netlify automated build is triggered by git push; manual Netlify CLI deployment encountered environment-specific blob upload errors).
 ## 2024-05-04
 - **Session Focus**: Vault Setup & Identity Initialization.
 - **Tasks**:

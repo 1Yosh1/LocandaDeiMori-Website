@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_CONTEXT/LOCANDA_DEI_MORI_WEB.md",
+                "file": "03_SESSIONS/DAILY_LOGS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LOCANDA_DEI_MORI_WEB"
+              "title": "DAILY_LOGS"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01_CONTEXT/LOCANDA_DEI_MORI_WEB.md",
+                "file": "03_SESSIONS/DAILY_LOGS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for LOCANDA_DEI_MORI_WEB"
+              "title": "Backlinks for DAILY_LOGS"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01_CONTEXT/LOCANDA_DEI_MORI_WEB.md",
+                "file": "03_SESSIONS/DAILY_LOGS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from LOCANDA_DEI_MORI_WEB"
+              "title": "Outgoing links from DAILY_LOGS"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01_CONTEXT/LOCANDA_DEI_MORI_WEB.md",
+                "file": "03_SESSIONS/DAILY_LOGS.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of LOCANDA_DEI_MORI_WEB"
+              "title": "Outline of DAILY_LOGS"
             }
           }
         ]
@@ -185,6 +185,16 @@
   },
   "active": "3fcd75f0ffbd3ed8",
   "lastOpenFiles": [
+    "Frontofrestaurant.webp",
+    "Buratta.webp",
+    "brushcettaClassica.webp",
+    "Antipastirustici.webp",
+    "03_SESSIONS/DAILY_LOGS.md",
+    "02_KNOWLEDGE/SECURITY_BEST_PRACTICES.md",
+    "02_KNOWLEDGE/MARKETING_STRATEGY.md",
+    "01_CONTEXT/LOCANDA_DEI_MORI_WEB.md",
+    "website/deno.lock",
+    "website/netlify.toml",
     "website/src/lib/i18n.ts",
     "website/src/components/LanguageContext.tsx",
     "website/tsconfig.tsbuildinfo",
@@ -195,14 +205,10 @@
     "00_CORE/TECH_STACK.md",
     "00_CORE/CONVENTIONS.md",
     "00_CORE/AGENT_IDENTITY.md",
-    "03_SESSIONS/DAILY_LOGS.md",
     "website/src/proxy.ts",
     "website/public/robots.txt",
     "website/src/utils/supabase/middleware.ts",
     "website/src/utils/supabase",
-    "website/src/utils",
-    "website/node_modules/@supabase/ssr/dist/module/version.d.ts",
-    "website/node_modules/@supabase/ssr/dist/main/version.d.ts",
     "website/node_modules/@supabase/ssr/README.md",
     "website/node_modules/@supabase/ssr/CHANGELOG.md",
     "website/node_modules/@supabase/ssr/docs/design.md",
@@ -215,11 +221,6 @@
     "website/public/images/authentic/lalocandainside.webp",
     "website/public/images/authentic/lalocandaWine.webp",
     "website/public/images/authentic/lalocanda2.webp",
-    "website/public/images/authentic/isolabela.webp",
-    "website/public/images/authentic/brushcettaClassica.webp",
-    "website/public/images/authentic/PastaCaMuddica.webp",
-    "02_KNOWLEDGE/MARKETING_STRATEGY.md",
-    "02_KNOWLEDGE/SECURITY_BEST_PRACTICES.md",
     "04_AGENT_SKILLS/frontend-design/SKILL.md",
     "04_AGENT_SKILLS/high-end-visual-design/SKILL.md",
     "04_AGENT_SKILLS/seo-technical/SKILL.md",
@@ -229,7 +230,6 @@
     "04_AGENT_SKILLS/postgres-best-practices/rules/security-rls-performance.md",
     "04_AGENT_SKILLS/postgres-best-practices/rules/security-rls-basics.md",
     "04_AGENT_SKILLS/postgres-best-practices/rules/security-privileges.md",
-    "04_AGENT_SKILLS/postgres-best-practices/rules/schema-primary-keys.md",
-    "04_AGENT_SKILLS/postgres-best-practices/rules/schema-partitioning.md"
+    "04_AGENT_SKILLS/postgres-best-practices/rules/schema-primary-keys.md"
   ]
 }
