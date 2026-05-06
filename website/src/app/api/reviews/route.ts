@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = "force-static";
+
 const AUTHENTIC_REVIEWS = [
   {
     id: 'google-1',
