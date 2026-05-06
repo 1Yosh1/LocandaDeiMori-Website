@@ -1,0 +1,235 @@
+{
+  "main": {
+    "id": "ddc6a1e9f4567246",
+    "type": "split",
+    "children": [
+      {
+        "id": "93545d17334ccd9b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3fcd75f0ffbd3ed8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01_CONTEXT/LOCANDA_DEI_MORI_WEB.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LOCANDA_DEI_MORI_WEB"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bd77e5a5df24485b",
+    "type": "split",
+    "children": [
+      {
+        "id": "c0905e3507042b5a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2221fef0ee2788f5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "7fd21724c47928e3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "12fb9ed4f425cd2a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4edb345967fca305",
+    "type": "split",
+    "children": [
+      {
+        "id": "e3d9c0d5a46b2f71",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "113d5bc49afefba9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01_CONTEXT/LOCANDA_DEI_MORI_WEB.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for LOCANDA_DEI_MORI_WEB"
+            }
+          },
+          {
+            "id": "6f9c8775972bc1f7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01_CONTEXT/LOCANDA_DEI_MORI_WEB.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from LOCANDA_DEI_MORI_WEB"
+            }
+          },
+          {
+            "id": "1d1e1f9c8113bc84",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "85c3c7185c9afead",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "fcf434cb13ae7609",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01_CONTEXT/LOCANDA_DEI_MORI_WEB.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of LOCANDA_DEI_MORI_WEB"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "3fcd75f0ffbd3ed8",
+  "lastOpenFiles": [
+    "website/src/lib/i18n.ts",
+    "website/src/components/LanguageContext.tsx",
+    "website/tsconfig.tsbuildinfo",
+    "website/src/utils/supabase/auth-proxy.ts",
+    "website/public/images/menu.webp",
+    "menu.webp",
+    "01_CONTEXT/DECISION_LOG.md",
+    "00_CORE/TECH_STACK.md",
+    "00_CORE/CONVENTIONS.md",
+    "00_CORE/AGENT_IDENTITY.md",
+    "03_SESSIONS/DAILY_LOGS.md",
+    "website/src/proxy.ts",
+    "website/public/robots.txt",
+    "website/src/utils/supabase/middleware.ts",
+    "website/src/utils/supabase",
+    "website/src/utils",
+    "website/node_modules/@supabase/ssr/dist/module/version.d.ts",
+    "website/node_modules/@supabase/ssr/dist/main/version.d.ts",
+    "website/node_modules/@supabase/ssr/README.md",
+    "website/node_modules/@supabase/ssr/CHANGELOG.md",
+    "website/node_modules/@supabase/ssr/docs/design.md",
+    "website/node_modules/cookie/README.md",
+    "website/node_modules/@standard-schema/utils/README.md",
+    "website/node_modules/@hookform/resolvers/README.md",
+    "website/node_modules/react-hook-form/README.md",
+    "website/public/images/authentic/parmigiana.webp",
+    "website/public/images/authentic/lalocandawine2.webp",
+    "website/public/images/authentic/lalocandainside.webp",
+    "website/public/images/authentic/lalocandaWine.webp",
+    "website/public/images/authentic/lalocanda2.webp",
+    "website/public/images/authentic/isolabela.webp",
+    "website/public/images/authentic/brushcettaClassica.webp",
+    "website/public/images/authentic/PastaCaMuddica.webp",
+    "02_KNOWLEDGE/MARKETING_STRATEGY.md",
+    "02_KNOWLEDGE/SECURITY_BEST_PRACTICES.md",
+    "04_AGENT_SKILLS/frontend-design/SKILL.md",
+    "04_AGENT_SKILLS/high-end-visual-design/SKILL.md",
+    "04_AGENT_SKILLS/seo-technical/SKILL.md",
+    "04_AGENT_SKILLS/Visual_Vibe_Audit.md",
+    "04_AGENT_SKILLS/clean-code/SKILL.md",
+    "04_AGENT_SKILLS/ui-ux-pro-max/SKILL.md",
+    "04_AGENT_SKILLS/postgres-best-practices/rules/security-rls-performance.md",
+    "04_AGENT_SKILLS/postgres-best-practices/rules/security-rls-basics.md",
+    "04_AGENT_SKILLS/postgres-best-practices/rules/security-privileges.md",
+    "04_AGENT_SKILLS/postgres-best-practices/rules/schema-primary-keys.md",
+    "04_AGENT_SKILLS/postgres-best-practices/rules/schema-partitioning.md"
+  ]
+}
