@@ -1,22 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
+// Fonts will be loaded via standard link tags in the head to avoid build-time fetching issues
+const interVariable = "--font-inter";
+const playfairVariable = "--font-playfair";
+const pinyonVariable = "--font-pinyon";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
-
-const pinyon = Pinyon_Script({
-  variable: "--font-pinyon",
-  weight: "400",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Locanda dei Mori | Genuine Sicilian Hospitality in Taormina",
@@ -75,9 +64,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} ${pinyon.variable} h-full antialiased`}
+      className={`${interVariable} ${playfairVariable} ${pinyonVariable} h-full antialiased`}
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Pinyon+Script&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

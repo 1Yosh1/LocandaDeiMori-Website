@@ -32,6 +32,9 @@
 :root {
   --background: #F9F5F0;
   --foreground: #2D241E;
+  --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-pinyon: "Pinyon Script", cursive;
 }
 
 /* Authentic Sicilian Majolica Pattern */
