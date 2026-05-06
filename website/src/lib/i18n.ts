@@ -18,7 +18,7 @@ export const translations = {
     story: {
       title: "La Nostra Storia",
       subtitle: "Semplice ma con un gusto strepitoso",
-      text1: "Siamo nati dalla passione per i sapori genuini della nostra terra. Locanda dei Mori non è solo un ristorante, è un viaggio attraverso la ricca tradizione culinaria siciliana, dove ogni piatto racconta una storia di famiglia e di amore per gli ingredienti locali.",
+      text1: "Siamo nati nel 2018 dalla passione per i sapori genuini della nostra terra. Locanda dei Mori non è solo un ristorante, è un viaggio attraverso la ricca tradizione culinaria siciliana, dove ogni piatto racconta una storia di famiglia e di amore per gli ingredienti locali.",
       text2: "Nel cuore di Taormina, offriamo un'atmosfera accogliente dove potrai sentirti a casa. Dai nostri formaggi artigianali al pesce freschissimo dei nostri mari, ogni dettaglio è curato per offrirti un'esperienza indimenticabile."
     },
     menu: {
@@ -74,7 +74,7 @@ export const translations = {
     story: {
       title: "Our Story",
       subtitle: "Simple but with an amazing taste",
-      text1: "We were born from the passion for the genuine flavors of our land. Locanda dei Mori is not just a restaurant, it's a journey through the rich Sicilian culinary tradition, where every dish tells a story of family and love for local ingredients.",
+      text1: "Founded in 2018 from a passion for the genuine flavors of our land, Locanda dei Mori is not just a restaurant—it's a journey through the rich Sicilian culinary tradition, where every dish tells a story of family and love for local ingredients.",
       text2: "In the heart of Taormina, we offer a welcoming atmosphere where you can feel at home. From our artisanal cheeses to the freshest fish from our seas, every detail is curated to offer you an unforgettable experience."
     },
     menu: {
@@ -130,7 +130,7 @@ export const translations = {
     story: {
       title: "Unsere Geschichte",
       subtitle: "Einfach, aber mit einem erstaunlichen Geschmack",
-      text1: "Wir sind aus der Leidenschaft für die echten Aromen unseres Landes entstanden. Die Locanda dei Mori ist nicht nur ein Restaurant, sondern eine Reise durch die reiche sizilianische kulinarische Tradition, in der jedes Gericht eine Geschichte der Familie und der Liebe zu lokalen Zutaten erzählt.",
+      text1: "Wir wurden 2018 aus der Leidenschaft für die echten Aromen unseres Landes gegründet. Die Locanda dei Mori ist nicht nur ein Restaurant, sondern eine Reise durch die reiche sizilianische kulinarische Tradition, in der jedes Gericht eine Geschichte der Familie und der Liebe zu lokalen Zutaten erzählt.",
       text2: "Im Herzen von Taormina bieten wir eine einladende Atmosphäre, in der Sie sich wie zu Hause fühlen können. Vom handwerklichen Käse bis zum frischesten Fisch, jedes Detail ist sorgfältig ausgewählt, um Ihnen ein unvergessliches Erlebnis zu bieten."
     },
     menu: {
@@ -186,7 +186,7 @@ export const translations = {
     story: {
       title: "Notre Histoire",
       subtitle: "Simple mais avec un goût incroyable",
-      text1: "Nous sommes nés de la passion pour les saveurs authentiques de notre terre. La Locanda dei Mori n'est pas seulement un restaurant, c'est un voyage à travers la riche tradition culinaire sicilienne, où chaque plat raconte une histoire de famille et d'amour pour les ingrédients locaux.",
+      text1: "Fondée en 2018 par passion pour les saveurs authentiques de notre terre, La Locanda dei Mori n'est pas seulement un restaurant, c'est un voyage à travers la riche tradition culinaire sicilienne, où chaque plat raconte une histoire de famille et d'amour pour les ingrédients locaux.",
       text2: "Au cœur de Taormina, nous offrons une atmosphère chaleureuse où vous vous sentirez comme chez vous. De nos fromages artisanaux aux poissons les plus frais, chaque détail est soigné pour vous offrir une expérience inoubliable."
     },
     menu: {

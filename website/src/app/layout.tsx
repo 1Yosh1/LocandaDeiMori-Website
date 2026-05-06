@@ -8,16 +8,16 @@ const pinyonVariable = "--font-pinyon";
 
 
 export const metadata: Metadata = {
-  title: "Locanda dei Mori | Genuine Sicilian Hospitality in Taormina",
-  description: "Experience the authentic taste of Sicily at Locanda dei Mori. From our famous pistachio bruschetta to traditional lasagna, enjoy a cozy dining experience in the heart of Taormina.",
-  keywords: ["Taormina restaurant", "Sicilian food", "Locanda dei Mori", "Best bruschetta Taormina", "Pistachio lasagna Sicily"],
+  title: "Locanda dei Mori | Authentic Sicilian Restaurant in Taormina",
+  description: "Experience the true flavors of Sicily at Locanda dei Mori, Taormina. Founded in 2018, we serve artisanal pistachio lasagna, fresh seafood, and traditional Sicilian recipes in a cozy, elegant atmosphere.",
+  keywords: ["Taormina restaurant", "Sicilian cuisine", "Locanda dei Mori", "authentic Italian food Taormina", "pistachio lasagna", "best dinner Taormina"],
   authors: [{ name: "Locanda dei Mori" }],
   openGraph: {
-    title: "Locanda dei Mori | Authentic Sicilian Bistro",
-    description: "Semplice ma con un gusto strepitoso! Visit us in the heart of Taormina.",
+    title: "Locanda dei Mori | Traditional Sicilian Bistro in Taormina",
+    description: "Authentic Sicilian flavors since 2018. Discover our handmade pasta and local specialties in the heart of Taormina.",
     url: "https://locandadeimori.it",
     siteName: "Locanda dei Mori",
-    locale: "en_US",
+    locale: "it_IT",
     type: "website",
   },
 };
@@ -39,7 +39,7 @@ export default function RootLayout({
     "telephone": "+39 334 849 7735",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Via Bagnoli Croci, 12",
+      "streetAddress": "Vico di Via Iallia Bassia, 1",
       "addressLocality": "Taormina",
       "postalCode": "98039",
       "addressCountry": "IT"
