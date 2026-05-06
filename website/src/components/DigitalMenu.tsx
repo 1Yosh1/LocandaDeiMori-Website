@@ -60,7 +60,8 @@ export default function DigitalMenu() {
   return (
     <section id="menu" className="relative py-40 md:py-56 px-4 bg-espresso bg-noise overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute inset-0 bg-majolica pointer-events-none" />
+      <div className="absolute inset-0 bg-majolica pointer-events-none opacity-20" />
+      <div className="absolute inset-0 bg-heritage pointer-events-none opacity-40" />
       
       {/* Editorial Split Header */}
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-end mb-24 relative z-10 gap-12">

@@ -12,6 +12,7 @@ export default function OurStory() {
     <section id="story" className="py-32 md:py-48 bg-cream bg-noise px-4 overflow-hidden relative">
       {/* Background Decor - Majolica and Ficodindia */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-majolica opacity-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-heritage opacity-30 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-ficodindia opacity-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-24 lg:gap-32 items-center">

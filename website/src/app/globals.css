@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-sicilian-yellow: #F7D15B; /* More vibrant sun-yellow */
+  --color-sicilian-yellow: #F4C430; /* Golden sun of Sicily */
   --color-jade: #72825E; /* Prickly pear green */
   --color-sage: #9CAD8A;
-  --color-cobalt: #2D5DA1; /* Authentic Majolica blue */
+  --color-cobalt: #235789; /* Deep Majolica Blue from plates */
   --color-lava: #1A1817;
-  --color-espresso: #2D241E;
-  --color-terracotta: #BC5439; /* Richer clay red */
+  --color-espresso: #3D2B1F; /* Warm dark wood from seats */
+  --color-terracotta: #D14900; /* Vibrant ceramic orange from fork holders */
   --color-wine: #631C24;
-  --color-cream: #F9F5F0; /* Warm stone/linen */
+  --color-cream: #FDFBF7; /* Clean, slightly warm white from plates */
+  --color-majolica-blue: #0047AB;
+  --color-majolica-green: #4F7942;
+  --color-majolica-yellow: #FFD700;
   
   --font-display: var(--font-playfair);
   --font-body: var(--font-inter);
@@ -40,16 +43,23 @@
 /* Authentic Sicilian Majolica Pattern */
 .bg-majolica {
   background-color: transparent;
-  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 0v120M0 60h120' stroke='%232D5DA1' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='60' cy='60' r='10' fill='%23F7D15B' opacity='0.1'/%3E%3Cpath d='M30 30l15 15M75 75l15 15M90 30l-15 15M45 75l-15 15' stroke='%2372825E' stroke-width='1' opacity='0.1'/%3E%3Cpath d='M60 20l10 10l-10 10l-10-10z' fill='%232D5DA1' opacity='0.05'/%3E%3Cpath d='M60 80l10 10l-10 10l-10-10z' fill='%232D5DA1' opacity='0.05'/%3E%3Cpath d='M20 60l10 10l-10 10l-10-10z' fill='%232D5DA1' opacity='0.05'/%3E%3Cpath d='M80 60l10 10l-10 10l-10-10z' fill='%232D5DA1' opacity='0.05'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 0v120M0 60h120' stroke='%23235789' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='60' cy='60' r='10' fill='%23F4C430' opacity='0.1'/%3E%3Cpath d='M30 30l15 15M75 75l15 15M90 30l-15 15M45 75l-15 15' stroke='%2372825E' stroke-width='1' opacity='0.1'/%3E%3Cpath d='M60 20l10 10l-10 10l-10-10z' fill='%23235789' opacity='0.05'/%3E%3Cpath d='M60 80l10 10l-10 10l-10-10z' fill='%23235789' opacity='0.05'/%3E%3Cpath d='M20 60l10 10l-10 10l-10-10z' fill='%23235789' opacity='0.05'/%3E%3Cpath d='M80 60l10 10l-10 10l-10-10z' fill='%23235789' opacity='0.05'/%3E%3C/svg%3E");
   background-size: 120px 120px;
   opacity: 0.15;
+}
+
+/* Heritage Pattern (Trinacria & Testa di Moro) */
+.bg-heritage {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.03' fill='%233D2B1F'%3E%3Cpath d='M30 30c0 15 15 15 15 30s-15 15-15 30' stroke='%233D2B1F' fill='none'/%3E%3Ccircle cx='90' cy='90' r='2'/%3E%3Cpath d='M150 150c-15 0-15-15-30-15s-15 15-30 15' stroke='%233D2B1F' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 /* Ficodindia Pattern */
 .bg-ficodindia {
   background-image: radial-gradient(var(--color-jade) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.15;
+  background-size: 32px 32px;
+  opacity: 0.1;
 }
 
 /* Glassmorphism for Admin and Cards */

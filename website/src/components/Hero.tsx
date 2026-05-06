@@ -40,7 +40,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
       {/* Sunny Gradient Overlay - Less dark, more vibrant */}
       <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/20 to-transparent z-[2]" />
       <div className="absolute inset-0 bg-majolica z-[3]" />
-      <div className="absolute inset-0 bg-noise z-[4]" />
+      <div className="absolute inset-0 bg-heritage z-[4] opacity-40" />
+      <div className="absolute inset-0 bg-noise z-[5]" />
 
       {/* Main Content */}
       <motion.div 
