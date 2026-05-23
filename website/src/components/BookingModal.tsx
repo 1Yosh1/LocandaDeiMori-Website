@@ -64,16 +64,23 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
       
       // WhatsApp Message Logic
       const message = `Nuova prenotazione da Locanda dei Mori!%0A%0A` +
-                      `Nome: ${data.name}%0A` +
-                      `Data: ${data.date}%0A` +
-                      `Ora: ${data.time}%0A` +
-                      `Ospiti: ${data.guests}%0A` +
-                      `Cell: ${data.phone}`;
+                      `Nome: ${encodeURIComponent(data.name)}%0A` +
+                      `Data: ${encodeURIComponent(data.date)}%0A` +
+                      `Ora: ${encodeURIComponent(data.time)}%0A` +
+                      `Ospiti: ${encodeURIComponent(data.guests)}%0A` +
+                      `Cell: ${encodeURIComponent(data.phone)}`;
       
       const whatsappUrl = `https://wa.me/393348497735?text=${message}`;
       
+      // Open WhatsApp in a new tab immediately
+      const newWindow = window.open(whatsappUrl, "_blank");
+      
+      // If popup blocker blocked the window, fallback to current window redirect
+      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+          window.location.href = whatsappUrl;
+      }
+      
       setTimeout(() => {
-        window.open(whatsappUrl, "_blank");
         onClose();
         setSuccess(false);
         reset();
