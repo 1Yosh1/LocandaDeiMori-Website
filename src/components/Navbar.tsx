@@ -45,29 +45,31 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       {/* Fluid Island Nav */}
       <nav
         className={cn(
-          "fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-between px-2 py-2 rounded-full",
+          "fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] flex items-center justify-between px-4 py-2 md:py-3 md:px-6 rounded-[2rem]",
           scrolled 
-            ? "top-6 bg-cream/90 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-lava/5 w-[95%] md:w-[750px]" 
-            : "top-8 bg-black/20 backdrop-blur-md shadow-lg border border-white/10 w-[95%] md:w-[850px]"
+            ? "top-4 bg-cream/95 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-lava/5 w-[95%] lg:w-[900px]" 
+            : "top-6 bg-black/20 backdrop-blur-md shadow-lg border border-white/10 w-[95%] lg:w-[1000px]"
         )}
       >
-        <Link href="/" className="flex flex-col pl-4 md:pl-8">
-          <span className={cn(
-            "text-xl md:text-2xl font-display font-bold tracking-tight transition-colors duration-500",
-            scrolled ? "text-espresso" : "text-cream"
-          )}>
-            Locanda dei Mori
-          </span>
-          <span className={cn(
-            "text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-bold transition-colors duration-500",
-            scrolled ? "text-terracotta" : "text-sicilian-yellow/80"
-          )}>
-            {t('hero.location')}
-          </span>
-        </Link>
+        <div className="flex flex-1 justify-start">
+          <Link href="/" className="flex flex-col">
+            <span className={cn(
+              "text-lg md:text-xl font-display font-bold tracking-tight transition-colors duration-500",
+              scrolled ? "text-espresso" : "text-cream"
+            )}>
+              Locanda dei Mori
+            </span>
+            <span className={cn(
+              "text-[8px] md:text-[9px] uppercase tracking-[0.2em] font-bold transition-colors duration-500",
+              scrolled ? "text-terracotta" : "text-sicilian-yellow/80"
+            )}>
+              {t('hero.location')}
+            </span>
+          </Link>
+        </div>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center space-x-6 absolute left-1/2 -translate-x-1/2">
+        <div className="hidden lg:flex flex-none items-center justify-center space-x-8">
           {NAV_LINKS.slice(1).map((link) => (
             <Link
               key={link.name}
@@ -83,9 +85,9 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           ))}
         </div>
 
-        <div className="flex items-center gap-2 pr-2">
+        <div className="flex flex-1 justify-end items-center gap-3 md:gap-4">
           {/* Desktop Language Switcher */}
-          <div className="relative hidden md:block">
+          <div className="relative hidden lg:block">
             <button
               onClick={() => setShowLangMenu(!showLangMenu)}
               className={cn(
@@ -117,7 +119,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           <button
             onClick={onOpenBooking}
             className={cn(
-              "hidden md:flex items-center gap-3 px-6 py-3 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] shadow-lg",
+              "hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] shadow-lg",
               scrolled 
                 ? "bg-espresso text-cream hover:bg-terracotta" 
                 : "bg-white/20 text-cream backdrop-blur-sm hover:bg-white hover:text-espresso"
@@ -131,25 +133,25 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={cn(
-              "relative w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-500",
+              "relative w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center transition-colors duration-500",
               scrolled ? "bg-lava/5 hover:bg-lava/10" : "bg-white/10 hover:bg-white/20"
             )}
             aria-label="Toggle menu"
           >
-            <div className="relative w-5 h-4">
+            <div className="relative w-4 h-3.5 md:w-5 md:h-4">
               <span className={cn(
                 "absolute h-[1.5px] bg-current transform transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]",
-                isOpen ? "w-5 rotate-45 top-2" : "w-5 top-0",
+                isOpen ? "w-full rotate-45 top-1/2 -translate-y-1/2" : "w-full top-0",
                 scrolled ? "text-espresso" : "text-cream"
               )} />
               <span className={cn(
-                "absolute h-[1.5px] bg-current top-2 transform transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]",
-                isOpen ? "w-0 opacity-0" : "w-4",
+                "absolute h-[1.5px] bg-current top-1/2 -translate-y-1/2 transform transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]",
+                isOpen ? "w-0 opacity-0" : "w-3/4",
                 scrolled ? "text-espresso" : "text-cream"
               )} />
               <span className={cn(
                 "absolute h-[1.5px] bg-current transform transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]",
-                isOpen ? "w-5 -rotate-45 top-2" : "w-3 top-4",
+                isOpen ? "w-full -rotate-45 top-1/2 -translate-y-1/2" : "w-1/2 bottom-0",
                 scrolled ? "text-espresso" : "text-cream"
               )} />
             </div>
