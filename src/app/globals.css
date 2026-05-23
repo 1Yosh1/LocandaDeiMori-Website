@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sicilian-yellow: #F4C430; /* Golden sun of Sicily */
+  --color-jade: #72825E; /* Prickly pear green */
+  --color-sage: #9CAD8A;
+  --color-cobalt: #235789; /* Deep Majolica Blue from plates */
+  --color-lava: #1A1817;
+  --color-espresso: #3D2B1F; /* Warm dark wood from seats */
+  --color-terracotta: #D14900; /* Vibrant ceramic orange from fork holders */
+  --color-wine: #631C24;
+  --color-cream: #FDFBF7; /* Clean, slightly warm white from plates */
+  --color-majolica-blue: #0047AB;
+  --color-majolica-green: #4F7942;
+  --color-majolica-yellow: #FFD700;
+  
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-inter);
+  --font-script: var(--font-pinyon);
+
+  --animate-fade-in: fade-in 0.8s cubic-bezier(0.32,0.72,0,1);
+  --animate-slide-up: slide-up 1.2s cubic-bezier(0.32,0.72,0,1);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+:root {
+  --background: #F9F5F0;
+  --foreground: #2D241E;
+  --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --font-pinyon: "Pinyon Script", cursive;
+}
+
+/* Authentic Sicilian Majolica Pattern */
+.bg-majolica {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 0v120M0 60h120' stroke='%23235789' stroke-width='0.5' opacity='0.2'/%3E%3Ccircle cx='60' cy='60' r='10' fill='%23F4C430' opacity='0.1'/%3E%3Cpath d='M30 30l15 15M75 75l15 15M90 30l-15 15M45 75l-15 15' stroke='%2372825E' stroke-width='1' opacity='0.1'/%3E%3Cpath d='M60 20l10 10l-10 10l-10-10z' fill='%23235789' opacity='0.05'/%3E%3Cpath d='M60 80l10 10l-10 10l-10-10z' fill='%23235789' opacity='0.05'/%3E%3Cpath d='M20 60l10 10l-10 10l-10-10z' fill='%23235789' opacity='0.05'/%3E%3Cpath d='M80 60l10 10l-10 10l-10-10z' fill='%23235789' opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  opacity: 0.15;
+}
+
+/* Heritage Pattern (Trinacria & Testa di Moro) - High Fidelity SVG */
+.bg-heritage {
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='240' height='240' viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.08' fill='none' stroke='%233D2B1F' stroke-width='0.5'%3E%3C!-- Trinacria Silhouette --%3E%3Cpath d='M120 40c0 0 10 20 20 30s30 10 30 10l-10 20s-20 0-30 10s-10 20-10 20l-20-10s0-20-10-30s-30-10-30-10l10-20s20 0 30-10s10-20 10-20z'/%3E%3Ccircle cx='120' cy='120' r='1.5' fill='%23F4C430'/%3E%3C!-- Testa di Moro Silhouette --%3E%3Cpath d='M40 160c0-15 10-25 25-25s25 10 25 25c0 10-5 20-15 20h-10c-10 0-15-10-15-20z'/%3E%3Cpath d='M45 140l10-10l10 10'/%3E%3Cpath d='M180 160c0-15 10-25 25-25s25 10 25 25c0 10-5 20-15 20h-10c-10 0-15-10-15-20z'/%3E%3Cpath d='M185 140l10-10l10 10'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 240px 240px;
+}
+
+/* Ficodindia Pattern */
+.bg-ficodindia {
+  background-image: radial-gradient(var(--color-jade) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.1;
+}
+
+/* Glassmorphism for Admin and Cards */
+.glass-card {
+  background: rgba(249, 245, 240, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(45, 36, 30, 0.08);
+}
+
+/* Luxury Noise Texture */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair);
+  letter-spacing: -0.01em;
+}
+
+.script-font {
+  font-family: var(--font-pinyon), cursive;
+}
