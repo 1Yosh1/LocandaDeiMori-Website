@@ -22,10 +22,11 @@ export async function proxy(request: NextRequest) {
       'Content-Security-Policy': 
         "default-src 'self'; " +
         "script-src 'self' 'unsafe-eval' 'unsafe-inline'; " +
-        "style-src 'self' 'unsafe-inline'; " +
-        "img-src 'self' blob: data: https://*.supabase.co https://images.unsplash.com; " +
-        "font-src 'self' data:; " +
-        "connect-src 'self' https://*.supabase.co wss://*.supabase.co localhost:* 127.0.0.1:*; " +
+        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+        "img-src 'self' blob: data: https://*.supabase.co https://images.unsplash.com https://maps.gstatic.com https://*.googleapis.com https://*.google.com; " +
+        "font-src 'self' data: https://fonts.gstatic.com; " +
+        "frame-src 'self' https://maps.google.com https://www.google.com; " +
+        "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://maps.googleapis.com localhost:* 127.0.0.1:*; " +
         "frame-ancestors 'none'; " +
         "upgrade-insecure-requests;",
     };

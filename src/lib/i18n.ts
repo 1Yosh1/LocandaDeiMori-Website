@@ -45,6 +45,7 @@ export const translations = {
       time: "Orario",
       guests: "Numero di Ospiti",
       phone: "Telefono",
+      email: "Email",
       confirm: "Conferma Prenotazione",
       success: "Richiesta inviata! Ti contatteremo presto per confermare.",
       pending: "Inoltro..."
@@ -101,6 +102,7 @@ export const translations = {
       time: "Time",
       guests: "Number of Guests",
       phone: "Phone Number",
+      email: "Email (Optional)",
       confirm: "Confirm Reservation",
       success: "Request sent! We will contact you soon.",
       pending: "Sending..."
@@ -157,6 +159,7 @@ export const translations = {
       time: "Uhrzeit",
       guests: "Anzahl der Gäste",
       phone: "Telefonnummer",
+      email: "E-Mail (Optional)",
       confirm: "Reservierung bestätigen",
       success: "Anfrage gesendet! Wir werden uns in Kürze melden.",
       pending: "Senden..."
@@ -213,6 +216,7 @@ export const translations = {
       time: "Heure",
       guests: "Nombre d'invités",
       phone: "Numéro de téléphone",
+      email: "Email (Optionnel)",
       confirm: "Confirmer la Réservation",
       success: "Demande envoyée ! Nous vous contacterons bientôt.",
       pending: "Envoi..."

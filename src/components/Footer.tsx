@@ -42,7 +42,7 @@ export default function Footer() {
             <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta">{t("footer.location")}</h4>
             <div className="space-y-6">
               <a 
-                href="https://goo.gl/maps/Taormina" 
+                href="https://www.google.com/maps/search/?api=1&query=Locanda+dei+Mori+Taormina" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group flex flex-col gap-2"
@@ -114,6 +114,44 @@ export default function Footer() {
                   </div>
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Interactive Location Map Row */}
+        <div className="lg:col-span-12 mt-4 pt-8 border-t border-white/5">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta block mb-1">
+                Trova La Locanda
+              </span>
+              <h4 className="text-2xl font-display text-cream">
+                Nel Cuore Storico di <span className="text-sicilian-yellow italic">Taormina</span>
+              </h4>
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Locanda+dei+Mori+Taormina"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[10px] uppercase tracking-widest font-bold bg-white/10 text-cream border border-white/20 hover:bg-sicilian-yellow hover:text-espresso hover:border-sicilian-yellow transition-all duration-300"
+            >
+              <MapPin className="w-3.5 h-3.5" />
+              Indicazioni Stradali (Google Maps) ↗
+            </a>
+          </div>
+
+          <div className="p-1.5 rounded-[2.5rem] bg-white/5 ring-1 ring-white/10 shadow-2xl overflow-hidden">
+            <div className="relative w-full h-80 rounded-[calc(2.5rem-0.375rem)] overflow-hidden bg-espresso shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+              <iframe
+                title="Locanda dei Mori Taormina Map"
+                width="100%"
+                height="100%"
+                className="w-full h-full border-0 opacity-90 hover:opacity-100 transition-opacity duration-300"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Locanda+dei+Mori,+Vico+di+Via+Iallia+Bassia+1,+98039+Taormina+ME,+Italy&t=&z=17&ie=UTF8&iwloc=&output=embed"
+              />
             </div>
           </div>
         </div>

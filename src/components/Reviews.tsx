@@ -13,21 +13,52 @@ interface Review {
   relative_time: string;
 }
 
+const FALLBACK_REVIEWS: Review[] = [
+  {
+    id: 'google-1',
+    author: 'Stefan Pacyński',
+    rating: 5,
+    text: 'Involtini perfetti di pesce spada e manzo al pistacchio! Incredibili! (Perfect swordfish and beef rolls with pistachio! Incredible!)',
+    relative_time: '5 days ago',
+  },
+  {
+    id: 'google-2',
+    author: 'Monica Masi',
+    rating: 5,
+    text: 'Splendida cena, personale estremamente gentile e disponibile, consigliatissimo il tiramisù di mamma Pina. Ottimo rapporto qualità prezzo, consigliatissimo!',
+    relative_time: '6 days ago',
+  },
+  {
+    id: 'google-3',
+    author: 'Léa Tholey',
+    rating: 5,
+    text: 'Una splendida gita in famiglia in questo ristorante con cibo delizioso e fatto in casa! Situato in un piccolo vicolo lontano dalla folla, e con un servizio eccellente!',
+    relative_time: '1 week ago',
+  },
+  {
+    id: 'google-4',
+    author: 'Andrea de Martini',
+    rating: 5,
+    text: 'Per chi vuole un posto sincero e non un acchiappa turisti. Personale e cibo molto buono. Il tiramisù...bhe...fantastico. consigliatissimo.',
+    relative_time: '1 week ago',
+  },
+];
+
 export default function Reviews() {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [reviews, setReviews] = useState<Review[]>(FALLBACK_REVIEWS);
+  const [loading, setLoading] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
     fetch("/api/reviews")
       .then((res) => res.json())
       .then((data) => {
-        setReviews(data);
-        setLoading(false);
+        if (Array.isArray(data) && data.length > 0) {
+          setReviews(data);
+        }
       })
       .catch((err) => {
-        console.error("Failed to load reviews", err);
-        setLoading(false);
+        console.warn("Using fallback reviews:", err);
       });
   }, []);
 

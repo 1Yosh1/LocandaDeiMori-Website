@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, Users, Phone, User, CheckCircle2, MessageCircle, AlertCircle, Clock } from "lucide-react";
+import { X, Calendar, Users, Phone, User, CheckCircle2, MessageCircle, AlertCircle, Clock, Mail } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/LanguageContext";
@@ -18,9 +18,10 @@ const bookingSchema = z.object({
     today.setHours(0, 0, 0, 0);
     return new Date(date) >= today;
   }, "Please select a future date"),
-  time: z.string().regex(/^([01]\d|2[0-3]):([0-5]\d)$/, "Invalid time format"),
-  guests: z.number().min(1).max(20),
+  time: z.string().regex(/^([01]\d|2[0-3]):([0-5]\d)$/, "Invalid time format (HH:MM)"),
+  guests: z.number().min(1, "Minimum 1 guest").max(20, "Maximum 20 guests"),
   phone: z.string().regex(/^\+?[1-9]\d{1,14}$/, "Invalid phone number (use international format)"),
+  email: z.string().email("Invalid email format").optional().or(z.literal("")),
 });
 
 type BookingFormData = z.infer<typeof bookingSchema>;
@@ -39,6 +40,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     resolver: zodResolver(bookingSchema),
     defaultValues: {
       guests: 2,
+      email: "",
     }
   });
 
@@ -47,51 +49,54 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
     const dateTime = `${data.date}T${data.time}:00Z`;
 
-    try {
-      const { error } = await supabase.from("reservations").insert([
-        {
-          guest_name: data.name,
-          date_time: dateTime,
-          guests_count: data.guests,
-          contact_number: data.phone,
-          status: "pending",
-        },
-      ]);
+    // 1. Attempt Supabase recording (if configured and active)
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    if (supabaseUrl && !supabaseUrl.includes("placeholder")) {
+      try {
+        const { error } = await supabase.from("reservations").insert([
+          {
+            guest_name: data.name,
+            date_time: dateTime,
+            guests_count: data.guests,
+            contact_number: data.phone,
+            status: "pending",
+          },
+        ]);
 
-      if (error) throw error;
-
-      setSuccess(true);
-      
-      // WhatsApp Message Logic
-      const message = `Nuova prenotazione da Locanda dei Mori!%0A%0A` +
-                      `Nome: ${encodeURIComponent(data.name)}%0A` +
-                      `Data: ${encodeURIComponent(data.date)}%0A` +
-                      `Ora: ${encodeURIComponent(data.time)}%0A` +
-                      `Ospiti: ${encodeURIComponent(data.guests)}%0A` +
-                      `Cell: ${encodeURIComponent(data.phone)}`;
-      
-      const whatsappUrl = `https://wa.me/393348497735?text=${message}`;
-      
-      // Open WhatsApp in a new tab immediately
-      const newWindow = window.open(whatsappUrl, "_blank");
-      
-      // If popup blocker blocked the window, fallback to current window redirect
-      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-          window.location.href = whatsappUrl;
+        if (error) {
+          console.warn("Supabase reservation record not stored:", error.message);
+        }
+      } catch (err) {
+        console.warn("Supabase unavailable, proceeding to WhatsApp reservation fallback:", err);
       }
-      
-      setTimeout(() => {
-        onClose();
-        setSuccess(false);
-        reset();
-      }, 2000);
-
-    } catch (err) {
-      console.error("Booking error:", err);
-      alert("Si è verificato un errore. Per favore riprova o chiamaci.");
-    } finally {
-      setLoading(false);
     }
+
+    // 2. Regardless of database availability, always ensure the reservation reaches WhatsApp
+    setSuccess(true);
+    
+    const emailLine = data.email ? `%0AEmail: ${encodeURIComponent(data.email)}` : "";
+    const message = `Nuova prenotazione da Locanda dei Mori!%0A%0A` +
+                    `Nome: ${encodeURIComponent(data.name)}%0A` +
+                    `Data: ${encodeURIComponent(data.date)}%0A` +
+                    `Ora: ${encodeURIComponent(data.time)}%0A` +
+                    `Ospiti: ${encodeURIComponent(data.guests)}%0A` +
+                    `Cell: ${encodeURIComponent(data.phone)}` +
+                    emailLine;
+    
+    const whatsappUrl = `https://wa.me/393348497735?text=${message}`;
+    
+    // Open WhatsApp in a new tab or fallback to redirect
+    const newWindow = window.open(whatsappUrl, "_blank");
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+      window.location.href = whatsappUrl;
+    }
+    
+    setTimeout(() => {
+      onClose();
+      setSuccess(false);
+      reset();
+      setLoading(false);
+    }, 2000);
   };
 
   return (
@@ -215,7 +220,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                           </div>
 
                           {/* Phone */}
-                          <div className="col-span-full space-y-2">
+                          <div className="space-y-2">
                             <label className="text-[10px] uppercase tracking-widest font-bold text-espresso/40 ml-1 flex items-center gap-2">
                               <Phone className="w-3 h-3" /> {t("booking.phone")}
                             </label>
@@ -230,6 +235,27 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                             {errors.phone && (
                               <p className="text-[10px] text-lava font-bold uppercase tracking-wider flex items-center gap-1 ml-1">
                                 <AlertCircle className="w-3 h-3" /> {errors.phone.message}
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Email */}
+                          <div className="space-y-2">
+                            <label className="text-[10px] uppercase tracking-widest font-bold text-espresso/40 ml-1 flex items-center gap-2">
+                              <Mail className="w-3 h-3" /> {t("booking.email")}
+                            </label>
+                            <input
+                              type="email"
+                              {...register("email")}
+                              className={cn(
+                                "w-full px-5 py-3.5 bg-black/5 border rounded-xl text-espresso focus:outline-none focus:ring-2 transition-all font-body text-sm",
+                                errors.email ? "border-lava/50 ring-lava/10" : "border-black/5 focus:ring-terracotta/20"
+                              )}
+                              placeholder="giacomo@example.com"
+                            />
+                            {errors.email && (
+                              <p className="text-[10px] text-lava font-bold uppercase tracking-wider flex items-center gap-1 ml-1">
+                                <AlertCircle className="w-3 h-3" /> {errors.email.message}
                               </p>
                             )}
                           </div>
